@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary antialiased min-h-screen selection:bg-primary/30;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface backdrop-blur-md border border-border rounded-2xl shadow-xl;
+  }
+  
+  .glass-button {
+    @apply bg-surface-hover hover:bg-surface-active border border-border transition-all duration-200;
+  }
+
+  .primary-button {
+    @apply bg-gradient-to-r from-secondary to-primary hover:opacity-90 text-white font-medium rounded-full px-6 py-2.5 transition-all duration-200 shadow-[0_0_15px_rgba(167,139,250,0.4)];
+  }
+  
+  .outline-button {
+    @apply border border-border hover:border-text-secondary text-text-primary font-medium rounded-full px-6 py-2.5 transition-all duration-200;
+  }
+
+  .nav-link {
+    @apply text-text-secondary hover:text-text-primary transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-surface;
+  }
+
+  .nav-link.active {
+    @apply text-text-primary bg-surface;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface-hover rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-surface-active;
+}
+
+/* Base input styling removal */
+input, textarea {
+  @apply bg-transparent outline-none;
+}
