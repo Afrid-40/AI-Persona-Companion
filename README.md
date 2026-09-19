@@ -1,52 +1,71 @@
-# 🤖 AI Persona
+🤖 AI Persona
 
 An AI-powered virtual assistant that provides intelligent, context-aware conversations using Large Language Models (LLMs). AI Persona delivers personalized responses, remembers conversation context, and supports document understanding through a modern full-stack architecture.
 
----
+🚀 Features
 
-## 🚀 Features
+💬 Natural language conversations
 
-- 💬 Natural language conversations
-- 🧠 Context-aware AI with conversation memory
-- 📄 Upload and analyze PDF/Text documents
-- ❓ Ask questions about uploaded documents
-- ⚡ Fast and responsive chat interface
-- 🔒 Secure backend API integration
-- 🌐 Modern and user-friendly UI
-- 🤖 Supports local and cloud LLMs
+🧠 Context-aware AI with conversation memory
 
----
+📄 Upload and analyze PDF/Text documents
 
-## 🛠️ Tech Stack
+❓ Ask questions about uploaded documents
 
-### Frontend
-- React.js
-- HTML5
-- CSS3
-- JavaScript
+⚡ Fast and responsive chat interface
 
-### Backend
-- Python
-- FastAPI
+🔒 Secure backend API integration
 
-### AI & LLM
-- Ollama (Qwen 3 4B)
-- OpenAI API *(Optional)*
-- Google Gemini *(Optional)*
+🌐 Modern and user-friendly UI
 
-### Database
-- MongoDB
+🤖 Supports local and cloud-based LLMs
 
-### Tools
-- Git
-- GitHub
-- VS Code
+🔌 OpenRouter API integration
 
----
+🛠️ Tech Stack
 
-## 📂 Project Structure
+Frontend
 
-```
+React.js
+
+HTML5
+
+CSS3
+
+JavaScript
+
+Backend
+
+Python
+
+FastAPI
+
+AI & LLM
+
+OpenRouter API
+
+OpenAI GPT-4o Mini
+
+Ollama (Qwen 3 4B)
+
+OpenAI API (Optional)
+
+Google Gemini (Optional)
+
+Database
+
+MongoDB
+
+Tools
+
+Git
+
+GitHub
+
+VS Code
+
+📂 Project Structure
+
 AI-Persona/
 │
 ├── frontend/
@@ -61,99 +80,226 @@ AI-Persona/
 │   ├── main.py
 │   └── requirements.txt
 │
+├── .env
 ├── .gitignore
 ├── README.md
 └── LICENSE
-```
 
----
+⚙️ Installation & Setup
 
-## ⚙️ Installation
+Follow the steps below to run AI Persona locally.
 
-### 1. Clone the Repository
+1. Clone the Repository
 
-```bash
 git clone https://github.com/Surendra1579/AI-Persona.git
 cd AI-Persona
-```
 
-### 2. Backend Setup
+2. Create the Environment File
 
-```bash
+Before starting the backend, you must create a .env file in the project directory.
+
+Create a file named:
+
+.env
+
+Add the following configuration:
+
+OPENROUTER_API_KEY=YOUR_OPENROUTER_API_KEY
+OPENROUTER_MODEL=openai/gpt-4o-mini
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+
+🔑 Getting an OpenRouter API Key
+
+You need your own OpenRouter API key to use the cloud LLM configuration.
+
+Replace:
+
+YOUR_OPENROUTER_API_KEY
+
+with your personal OpenRouter API key.
+
+Never commit your .env file or API key to GitHub.
+
+Your .gitignore should contain:
+
+.env
+venv/
+__pycache__/
+node_modules/
+
+⚠️ Security: API keys are private credentials. Do not share them publicly, upload them to GitHub, or hard-code them directly into source code.
+
+3. Backend Setup
+
+Open a terminal in the project directory and run:
+
 cd backend
+
+Create a Python virtual environment:
 
 python -m venv venv
 
-# Windows
+Windows
+
+Activate the virtual environment:
+
 venv\Scripts\activate
 
-# Install dependencies
+Install Dependencies
+
 pip install -r requirements.txt
 
-# Start FastAPI
+Start the FastAPI Backend
+
 uvicorn main:app --reload
-```
 
-### 3. Frontend Setup
+The backend should now be available at:
 
-```bash
+http://127.0.0.1:8000
+
+FastAPI documentation can be accessed at:
+
+http://127.0.0.1:8000/docs
+
+4. Frontend Setup
+
+Open a new terminal and navigate to the frontend:
+
 cd frontend
+
+Install the required packages:
 
 npm install
 
+Start the development server:
+
 npm start
-```
 
----
+The frontend will normally be available at:
 
-## 📸 Features in Action
+http://localhost:3000
 
-- AI Chat Assistant
-- Personalized Conversations
-- Document Upload
-- Intelligent Question Answering
-- Real-time Responses
+🔐 Environment Variables
 
----
+AI Persona uses environment variables to configure the OpenRouter connection.
 
-## 🎯 Future Enhancements
+Variable
 
-- 🎤 Voice Assistant
-- 🔊 Text-to-Speech
-- 🌍 Multi-language Support
-- 🖼️ Image Understanding
-- 📚 RAG-based Knowledge Base
-- 👤 User Authentication
-- ☁️ Cloud Deployment
+Description
 
----
+Example
 
-## 🤝 Contributing
+OPENROUTER_API_KEY
+
+Your personal OpenRouter API key
+
+YOUR_OPENROUTER_API_KEY
+
+OPENROUTER_MODEL
+
+LLM model used by the application
+
+openai/gpt-4o-mini
+
+OPENROUTER_BASE_URL
+
+OpenRouter API endpoint
+
+https://openrouter.ai/api/v1
+
+Example .env
+
+OPENROUTER_API_KEY=YOUR_OPENROUTER_API_KEY
+OPENROUTER_MODEL=openai/gpt-4o-mini
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+
+Each developer must create their own .env file after cloning the repository.
+
+The .env file should not be pushed to GitHub.
+
+▶️ Running the Complete Application
+
+After completing the setup:
+
+Terminal 1 — Backend
+
+cd backend
+venv\Scripts\activate
+uvicorn main:app --reload
+
+Terminal 2 — Frontend
+
+cd frontend
+npm start
+
+Once both servers are running, open the frontend in your browser.
+
+http://localhost:3000
+
+📸 Features in Action
+
+AI Persona provides:
+
+🤖 AI Chat Assistant
+
+🧠 Personalized Conversations
+
+📄 Document Upload
+
+❓ Intelligent Question Answering
+
+💬 Context-Aware Responses
+
+⚡ Real-Time AI Interaction
+
+🎯 Future Enhancements
+
+🎤 Voice Assistant
+
+🔊 Text-to-Speech
+
+🌍 Multi-language Support
+
+🖼️ Image Understanding
+
+📚 RAG-based Knowledge Base
+
+👤 User Authentication
+
+☁️ Cloud Deployment
+
+🧩 Additional LLM Provider Support
+
+🤝 Contributing
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Push the branch
-5. Open a Pull Request
+Fork the repository
 
----
+Create a new branch
 
-## 📜 License
+Create your .env file locally
+
+Make your changes
+
+Commit your changes
+
+Push the branch
+
+Open a Pull Request
+
+Never commit API keys, passwords, tokens, or other sensitive credentials.
+
+📜 License
 
 This project is licensed under the MIT License.
 
----
+👨‍💻 Author
 
-## 👨‍💻 Author
+Naga Surendra
 
-**Naga Surendra**
+GitHub: https://github.com/Surendra1579
 
-- GitHub: https://github.com/Surendra1579
-
----
-
-## ⭐ Support
+⭐ Support
 
 If you found this project useful, please consider giving it a ⭐ on GitHub!
